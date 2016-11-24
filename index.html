@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="css/style.css"></link>
+        <title>Memory Game</title>
+    </head>
+    <body>
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/all.js";
+            fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        </script>
+
+        <div id="start-container">
+            <form>
+                <div>
+                    <p class="font25">Enter your username</p>
+                    <input id="username" type="text"></input>
+                    <div id="usernameError" style="display: none">Please enter username.</div>
+                </div>
+                <div class="dropdown">
+                    <p class="font25">Select Level</p>
+                    <select id="level" class="btn">
+                        <option value="4">Easy 4x4</option>
+                        <option value="6">Medium 6x6</option>
+                        <option value="8">Hard 8x8</option>
+                    </select>
+                </div> 
+                <button type="button" class="btn playbtn" onclick="playGame()">Play</button>
+            </form>
+        </div>
+
+        <div id="game-container">
+            <div id="gameInfo" class="font25" style="display: none;"></div>
+            <div id="displayOfCards" style="display: none;"></div>
+        </div>
+        
+        <div id="modal-container" class="modal">
+            <div class="modal-content">
+                <span id="close"><img src="images/close.png"></span>
+                <p id="result" class="font25"></p>
+                <div class="share-buttons">
+                    <a class="twitter-share-button" id="twitter" href="https://twitter.com/intent/tweet?text=Hello%20world" 
+                    target="_blank" title="Tweet"><img src="images/twitter.png"></a>
+                    <a id="facebook" target="_blank" title="Share on Facebook"><img src="images/facebook.png"></a>
+                </div>
+            </div>
+        </div>
+
+        <div id="rank-container" style="display: none;">
+            <button type="button" class="btn replaybtn replay" onclick="playAgain()">Play Again</button>
+            <ul class="tab">
+                <li><a class="tablinks active" onclick="openLevel(event, 'EasyLevel')">Easy</a></li>
+                <li><a class="tablinks" onclick="openLevel(event, 'MediumLevel')">Medium</a></li>
+                <li><a class="tablinks" onclick="openLevel(event, 'HardLevel')">Hard</a></li>
+            </ul>
+            <div id="EasyLevel" class="tabcontent font25" style="display: block;">
+                <p id="easy">No brave players yet!</p>
+            </div>
+            <div id="MediumLevel" class="tabcontent font25">
+                <p id="medium">No brave players yet!</p> 
+            </div>
+            <div id="HardLevel" class="tabcontent font25">
+                <p id="hard">No brave players yet!</p>
+            </div>
+        </div>
+    </body>
+    <script src="js/helper.js"></script>
+    <script src="js/app.js"></script>
+</html>
+
