@@ -2,10 +2,6 @@ body {
     background-image: url('https://static1.squarespace.com/static/5172ee42e4b0532e10d66745/t/57abc768b3db2b4ff1dee417/1470875502369/White-Background.jpg?format=2500w');
     background-position: center center;
 	background-repeat: no-repeat;
-	/*-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;*/
     font-family: 'Cormorant Garamond', serif;
 }
 
@@ -27,7 +23,16 @@ body {
 	display: inline-block;
 	padding: 5px;
 	transition: 0.6s;
+    -webkit-transition: 0.6s;
+	-moz-transition: 0.6s;
+	-o-transition: 0.6s;
+	-ms-transition: 0.6s;
 	transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+	-moz-transform-style: preserve-3d;
+	-o-transform-style: preserve-3d;
+	-ms-transform-style: preserve-3d;
+
     position: relative;
 	width:100px;
 	height: 100px;
@@ -35,50 +40,46 @@ body {
 
 .front, .back {  
 	backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-o-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
     position: absolute;
 }
 
 .front {z-index: 2;}
 
-.back {transform: rotateY(180deg);}
+.back, .flipped {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+    }
 
-.flipped {transform: rotateY(180deg);}
-
-.matched .front {
-    transition: opacity 0.6s linear;
-    opacity: 0;
-}
-
+.matched .front,
 .matched .back {
     transition: opacity 0.6s linear;
+    -webkit-transition: opacity 0.6s linear;
+	-moz-transition: opacity 0.6s linear;
+	-o-transition: opacity 0.6s linear;
+	-ms-transition: opacity 0.6s linear;
     opacity: 0;
-}
-
-#displayOfCards {
-    width: 960px;
-    position: relative;
-    margin:0 auto;
 }
 
 .game4 {
-	width: 46%;
-    margin: auto;
-    position: relative;
-    /*margin: 100px auto;*/
+	width: 440px;
+    margin: 100px auto;
 }
 
 .game6 {
-	width: 69%;
-    margin: auto;
-    position: relative;
-    /*margin: 40px auto 5px;*/
+	width:660px;
+    margin: 40px auto;
 }
 
 .game8 { 
-	width: 92%;
-    position: relative;
+	width: 880px;
     margin: auto;
-    /*margin: 20px auto;*/
 }
 
 /*START*/
@@ -193,6 +194,10 @@ ul.tab li a {
     padding: 14px 0px;
     text-decoration: none;
     transition: 0.3s;
+     -webkit-transition: 0.3s;
+	-moz-transition: 0.3s;
+	-o-transition: 0.3s;
+	-ms-transition: 0.3s;
     font-size: 30px;
     width: 100%;
 }
@@ -232,87 +237,87 @@ ul.tab li a:focus, .active {background-color: #ccc; width: 100%;}
     justify-content: space-around;
 }
 
-@media only screen and (max-width: 1840px) {
-    #displayOfCards {
-        width: 53%;
+@media only screen and (max-width: 460px) {
+    .game4 {
+        margin: auto;
+        width: 100%;
+    }
+    .game4 .flipper {
+        width: 22%;
+        padding: 4px;
+    }
+    .game4 .flipper img {
+        max-width: 100%;
     }
 }
 
-@media only screen and (max-width: 1230px) {
-    #displayOfCards {
-        width: 90%;
-    }
-
-    /*.game8 {
-        width: 80%;
-    }*/
-}
-
-@media only screen and (max-width: 1230px) {
-    #displayOfCards {
-        width: 90%;
-    }
-}
-
-
-
-/*
 @media only screen and (max-width: 680px) {
     .game6 {
         margin: auto;
         width: 100%;
     }
-    .game6 .flipper  {
+    .game6 .flipper {
         width: 13.65%;
-        height: 80px;
+        height: 50px;
+                padding: 4px;
+
     }
     .game6 .flipper img {
         max-width: 100%;
     }
-    #gameInfo span {
-        display: inherit;
-        padding: 0px;
-    }
 }
 
-@media only screen and (max-width: 700px) {
-    .game8 .flipper  {
-        width: 10%;
-        height: 50px;
-    }
-    #rank-container {
-        width: 100%;
-    }
-}
-
-@media only screen and (max-width: 980px) {
-    #gameInfo {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-    #close {
-        width: 8%;
-    }
-}
-
-@media only screen and (max-width: 1480px) {
+@media only screen and (max-width: 1460px) {
     .game8 {
         margin: auto;
-        max-width: 100%;
+        width: 70%;
     }
-    .game8 .flipper  {
-        width: 10%;
-        height: 70px
+    .game8 .flipper {
+        width: 11%;
+        height: 90px;
     }
     .game8 .flipper img {
         max-width: 100%;
-    }  
+    }
 }
 
-
-
-@media only screen and (min-width:700px) and (max-width: 1200px) {
-   #rank-container {
-       width: 70%;
+@media only screen and (max-width: 990px) {
+    .game8 {
+        margin: auto;
+        width: 80%;
     }
-}*/
+    .game8 .flipper {
+        width: 10%;
+        height: 85px;
+    }
+    .game8 .flipper img {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 530px) {
+    .game8 {
+        margin: auto;
+        width: 100%;
+    }
+    .game8 .flipper {
+        width: 9%;
+        height: 60px;
+    }
+    .game8 .flipper img {
+        max-width: 100%;
+    }
+}
+
+@media only screen and (max-width: 960px) {
+    #rank-container {
+        width: 100%;
+        margin: 55px auto 10px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    #start-container {
+        width: 100%;
+    }
+}

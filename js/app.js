@@ -40,17 +40,17 @@ var Game = function (level, name) {
   this.username = name;
   //
   this.level = level;
-  this.levelEl = document.createElement('span');
+  this.levelEl = document.createElement('p');
   this.levelEl.innerHTML = 'Level: ' + this.getLevelName(this.level);
   //
   this.pairsOfCards = this.level * this.level / 2;
   this.cards = [];
   //
   this.numClicks = 0;
-  this.numClicksEl = document.createElement('span');
+  this.numClicksEl = document.createElement('p');
   this.numClicksEl.innerHTML = numberOfMovesHTML.replace('%data%', '0');
   //
-  this.timerEl = document.createElement('span');
+  this.timerEl = document.createElement('p');
   this.timerEl.innerHTML = timeHTML.replace('%data%', '0');
   // 
   this.startTime();
